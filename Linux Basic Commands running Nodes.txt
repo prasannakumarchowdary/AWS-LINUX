@@ -1,0 +1,252 @@
+Linux Basic Commands:
+---------------------
+$ --> Normal user prompt
+
+sudo -i  --> to switch root
+# --> root prompt
+
+hostname Linux-Server
+exec bash
+
+cal --> to check the Current month Calendar 
+
+cal 05 2020  --> to check the old calendar
+
+date  --> to check the date & time
+
+pwd --> to check the present working directory
+
+who -> to check the login user
+
+whoami --> to check the current user
+
+Linux fist set of Commands:
+===========================
+Creating, Copying, Removing, Moving files & Directory
+
+cat > filename --> to create a file
+
+EX: cat > file1
+    Welcome to NareshIT
+    ctrl+d
+
+ls --> to list files & Directorys
+
+ls -l --> to list files & directory with long listing
+
+cat >> filename --> to append the line
+Linux basic commands Session
+ctl+d
+
+cat filename --> to read content in the file
+
+touch file2 file3 file4 file5 
+
+touch xyz{1..1000}
+
+mkdir jenkins --> to create a directory
+
+cd jenkins --> to switch to the directory
+
+cd .. --> to exit from the directory
+
+cp sourcefilename destination directory  --> to copy file in to the directory
+
+mv sourcefilename destination directory --> to move file in to the directory
+
+mkdir git{1..100}
+
+rm filename --> to delete/remove the file
+
+rm -rf filename --> to delete the file forcefully
+
+rmdir directory name --> to delete the directory
+
+rm -rf directory name --> to delete the directory forcefully
+
+mv sourcedirectory destination directory  --> to rename the directory
+
+Filter Commands:
+================
+
+less --> to read the content pagewise
+more --> to read the content pagewise
+head --> to read top 10 lines of the file
+head filename 
+head -5 filename --> to read top 5 lines of the file
+
+tail --> to last 10 lines of the file
+tail filename 
+tail -4 filename 
+
+File Editors:
+=============
+vi  --> Visual display editor
+vim --> Visual display editor improved
+
+In vi we have 3 modes:
+
+1) Command mode:  
+EX: vi filename
+
+move courser left to right and top to bottom
+yy  --> to copy the entire line
+p   --> to paste entire line
+dd  --> to delete the entire line
+u   --> to undo the lines
+w   --> to move the courser word by word
+b   --> to move the courser back word by word
+i   --> to move insert mode
+insert
+
+2) Insert mode:
+edit the content
+esc
+
+3) Extended Command mode:
+:w  --> to save the file
+:q  --> to quot the file with out save
+:wq --> to save & quit the file
+:w! --> to save the file forcefully
+:q! --> to quit the file forcefully
+:wq! --> to save and quit the file forcefully
+
+
+Find: Search:
+=============
+find / -name filename  --> to find the file
+find / -name folder name --> to find the folder
+find / -name username --> to find the user
+find / -name group name --> to find the group
+
+File Permissions:
+=================
+
+ls --> to list the files and folders
+
+ls -l --> to list the files & folders with long listing
+
+file1 
+EX: ls -l file1 --> to check the file permissions
+
+File permissions are having 3 levels:
+
+1) Owner or user Level
+2) Group Level 
+3) Others Level
+
+3 Types of Permissions:
+
+r --> read only
+w --> Write/edit
+x --> Execute
+
+- --- --- ---
+  u/o  g   o
+  r   r   r
+
+2nd method: Absolute Method: In place of  r  w  x  we use Numbers
+----------------------------
+r = 4
+w = 2
+x = 1
+
+EX:  chmod 444 filename
+
+Linux User Management:
+=======================
+adduser/useradd --> to create a user
+EX: adduser ram
+
+passwd username --> to add password to the user
+EX: passwd ram
+new passwd:
+Re-type new passwd:
+Successfully add the password
+
+vi /etc/sudoers  --> to give permissions to the user we need to go to the path
+root  ALL  ALL  ALL
+yy
+p
+ram  ALL  ALL  ALL
+:wq! --> to save and quit the file forcefully
+
+su username --> to switch user
+EX: su ram
+
+exit/quit --> to exit from the user
+
+
+Deployment Commands:
+====================
+
+Linux Family's:
+
+1) Debein family:          apt/apt-get  --> Package manager
+                           
+                           apt-get install java -y
+                           apt-get install openjdk-8* -y
+                           java -version
+
+                           apt-get install git -y
+                           git --version
+
+
+                  Ubuntu
+                  Fedora
+                  AVLinux
+                  GRML
+
+
+2) Redhat Family:         yum  --> Package manager
+                          yum install java -y
+                          java -version
+
+                          yum install git -y
+                          git --version
+
+
+                  RHEL
+                  CentOS
+                  Amazon Linux
+                  Suse Linux
+
+
+Ubuntu Server:
+
+apt-get update -y  --> to update internal repository
+
+apt-get install java -y  ---> to install java on ubuntu server
+apt-get install openjdk-8* -y to install java 1.8 version on ubuntu server
+java -version
+
+apt-get install maven -y
+mvn --version
+
+apt-get install python -y
+apt-get install ansible -y
+ansible --version
+
+==> Go to Browser and copy the link address 
+
+wget xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.tar
+tar -xvzf xxxxxxxxxxxxxxxxxxxxxxxxxxxxx.tar
+
+wget xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.zip
+unzip xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.zip
+
+
+********** We should not execute the Below Commands on Prod Servers *********
+==============================================================================
+
+init 0  --> Shutdown 
+
+init 1  --> Power off
+
+init 6  --> Reboot/restart
+
+shutdown --> shutdown
+
+Poweroff --> Poweroff
+
+Reboot  --> Restart

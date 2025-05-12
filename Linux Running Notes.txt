@@ -1,0 +1,243 @@
+Linux Commands:
+================
+$ --> Normal user prompt
+
+sudo -i --> to switch root
+# --> Root prompt 
+
+hostname  Server name --> to change the server name
+exec bash --> to reflect the hostname
+
+date --> to check date and time
+
+cal --> to check the current month calendar
+
+cal 01 2020 --> to check the old calendar
+
+pwd --> to check present working directory
+
+who --> login user
+
+whoami --> to check the present user
+
+users --> to check all the users
+
+Basic Linux Commands -- 1st set of commands
+--------------------------------------------
+Creating, Removing, Copying & Moving Files and Directorys
+
+cat > filename --> to create a file
+EX: cat > file1
+Hello-World
+
+ctrl+d  --> to save the file
+
+ls --> to list files & directorys
+
+cat filename --> to read content in the file
+
+cat >> filename --> to append content in the file
+EX: cat >> file1
+Linux Session 
+Welcome to Harsha Trainings
+
+ctrl+d
+
+touch file2 file3 file4 file5 file6 --> to create multiple files
+
+touch xyz{1..100} --> by using shortcut we can create multiple files
+
+mkdir directory name --> to create directory
+EX mkdir jenkins
+
+ls --> to list files & directorys
+
+cd directory name --> to switch directory
+cd jenkins
+
+cd .. --> to exit from the directory
+
+mkdir jenkins{1..200} --> to create multiple directorys
+
+cp filename directory --> to copy file in to directory
+
+mv filename directory --> to move the directory
+
+rm filename --> to remove/delete the file
+
+rm -rf filename --> to remove the file forcefully
+
+rmdir directory name --> to remove the directory
+
+rm -rf directoryname --> to delete the directory with files
+
+mv old_directory new_directory --> to rename the directory
+
+
+File Editors:
+=============
+
+1) Vi --> Visual Display Editor
+2) Vim --> Visual Display Editor Improved
+
+It has 3 modes:
+
+1) Command mode
+2) Insert mode(edit mode)
+3) Extended Command mode
+
+1) Command mode::
+
+vi /etc/passwd  --> to edit the file
+
+move courser left to right and top to bottom
+yy --> to copy entire line
+p  --> to paste the entire line
+dd --> to delete the entire line
+u  --> to the entire line
+w  --> to move the courser word by word
+b  --> to move the courser back word by word
+
+i --> to move insert mode
+
+2) Insert mode::
+
+Edit the content 
+esc --> to move extended command mode
+
+3) Extended command mode::
+
+:w   --> to save the file
+:q   --> to quit the file with out save
+:wq  --> to save and quit the file
+:wq! --> to save and quit the file forcefully
+:w!  --> to save the file forcefully
+:q!  --> to quit the file forcefully
+
+Filter Commands:
+================
+
+1) less  --> to read the content pagewise
+2) more  --> to read the content pagewise
+3) head  --> to read the top 10 lines of the file
+   EX: head /etc/passwd
+       head -5 /etc/passwd
+
+4) tail --> to read last 10 lines of the file
+   EX: tail /etc/passwd
+       tail -5 /etc/passwd
+
+
+File Permissions::                       
+==================
+Permissions are applied on 3 Levels:             - --- --- ---
+                                                   rwx
+1) Owner or User Level
+2) Group Level 
+3) Others Level
+
+Access modes are 3 types:
+
+1) r  --> read only
+2) w  --> Write/edit/delete/append
+3) x  --> Execute
+
+chmod u=rwx,g=rw,x=r file1 --> to apply the permissions to the file
+
+ls -l --> to list files & directorys with long listing
+
+2 Absolute Method:
+------------------
+In absolute method we use numbers instead of using symbols i.e
+
+1) Read    = 4
+2) Write   = 2
+3) Execute = 1
+
+EX:  chmod 444 file
+     chmod 777 file
+
+
+Find:: Search
+=============
+
+find / -name filename --> to search the file
+
+find / -name foldername --> to find the folder
+
+find / -name username --> to find the user
+
+find / -name groupname --> to find the group
+
+
+User Management:
+================
+
+useradd/adduser username  --> to create a user
+
+passwd username --> to add passwd to the user
+new password:
+Re-type new password:
+
+vi /etc/sudoers  --> to give permissions to the user
+
+su username --> to switch user
+
+exit
+
+
+Deployment Commands::
+=====================
+
+Linux Family's:                                  apt-get update -y
+
+              Debein Family:                     apt-get --> Package Manager
+                             Ubuntu              apt-get install java -y --> to install java
+                             Fedora              java -version  --> to check the java version
+                             AV Linux            apt-get install git -y
+                             GRML                git --version
+
+
+                                                 yum update -y
+
+              Redhat Family:                     yum --> Package Manager
+                             RHEL                yum install java -y        yum install openjdk-8* -y
+                             CentOS              java -version
+                             SuseLinux           yum install git -y
+                             Amazon Linux        git --version
+
+wget xxxxxxxxxxxxxxxxxxxxxxxxxxxxx.zip
+unzip xxxxxxxxxxxxxxxxxxxxxxxxxxxx.zip
+
+wget xxxxxxxxxxxxxxxxxxxxxxxxxxxxx.tar
+tar -xvzf xxxxxxxxxxxxxxxxxxxxxxxxxx.tar
+
+
+
+***************The Below Commands should not be executed on Prod Servers ****************************
+
+1) init 0
+
+2) init 1
+
+3) init 6
+
+4) reboot
+
+5) shutdown
+
+6) poweroff
+
+
+EC2 Project:  Customized AMIs
+------------------------------
+
+java Project: Startup 
+
+POC(Proof of Concept) 45 days
+
+3 Dev Servers    java, GIT, Maven, Ansible, Tomcat   -->  Customized AMI        300
+
+3 QA Servers     Testing tools                       -->  Customized AMI        300
+ 
+3 Prod Servers   Prod Applications                   -->  Customized AMI        400

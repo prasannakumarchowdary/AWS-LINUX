@@ -1,0 +1,94 @@
+SHELL SCRIPTING RUNNING NOTES
+##############################
+
+What is Linux? Architecture of Linux?
+-------------------------------------
+==> Linux is an Operating system.
+
+==> Operating system is a mediator or Interface between user and Computer Hardware.
+
+==> LInux Kernel Developed by Linux Torvalds
+
+==> He born in 28th Dec 1969
+
+==> He is American Software Engineer
+
+
+Linux Architecture:
+--------------------
+1) Application
+2) Shell
+3) Kernel
+4) Hardware
+
+=> When we execute any command in Linux then shell will process our command execution.
+=> Shell will verify command syntax is valid or not.
+=> Shell will convert our Command in to 'Kernel' Understandable format.
+=> Kernel is responsible to communicate with Hardware components.
+=> Kernel is mediator between Shell and Hardware.
+=> Shell is Mediator between user and Kernel
+
+# Print all shells of Linux machine
+$ cat /etc/shells
+
+# Print default shell of Linux Machine
+$ echo $SHELL
+
+Note: we have '/bin/bash' as default shell.
+
+=============================
+What is Shell Scripting?
+=============================
+
+=> Shell scripting means executing set of commands using a file
+=> Shell will act as mediator between user and kernel.
+=> The process of executing set of commands available in the file using SHELL is called as Shell scripting.
+=> Shell Scripting is used automate our daily routine works.
+=> Shell Script file will have .sh extension.
+
+=======================
+Script-1 : work.sh
+=======================
+#! /bin/bash
+
+whoami
+pwd
+date
+ls -l
+
+#### Run: sh work.sh  ####
+
+====================
+Script-2: NameDemo.sh
+====================
+#! /bin/bash
+
+echo 'Enter your name'
+read Ram
+echo "Good Morning $Ram"
+
+#### RUN: sh NameDemo.sh ####
+
+==========================
+Script-3: msg.sh
+==========================
+#! /bin/bash
+
+echo 'Hello World'
+echo 'Welcome to Naresh IT'
+echo 'DevOps is very Interesting'
+
+#### Run: sh msg.sh ####
+
+===========================
+Script-4: sum.sh
+===========================
+#! /bin/bash
+
+a=10
+b=20
+c=$(($a+$b))
+echo "sum is : $c"
+
+#### Run: sh sum.sh ####
+=========================
