@@ -1,0 +1,21 @@
+
+#!/bin/bash
+yum update -y
+yum install -y
+service httpd start
+chkconfig httpd on
+echo "<h1> This is My Web server</h1>" > /var/www/html/index.html
+
+
+
+25130055487
+
+https://web.webex.com/join-meeting
+
+
+https://learn.nareshit.com/users/express_signin?email=prasannakumarcherukumalla7@gmail.com
+
+ 
+
+
+

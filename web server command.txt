@@ -1,0 +1,9 @@
+#!/bin/bash
+yum update -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+echo "<!DOCTYPE html><html><body
+style="background-color:green"><h1>Hi this
+prasanna --> Server1</h1></body></html>" >>
+ /var/www/html/index.html
